@@ -34,20 +34,52 @@ body{
 	height: 75px;
 }
 
-.search-box{
-	bottom: 7.5%;
-	position: fixed;
-	width: 100px;
-	margin-left: 20px;
-	border-radius: 20px;
-}
-
 .search-page-text{
-	font-size: 25px;
+	font-size: 22px;
 	color: white;
 	white-space: nowrap;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	margin-left: 20px;
+}
+
+::placeholder{
+	color: white;
+}
+
+.wrap{
+	display: flex;
+	margin-left: -20px;
+}
+
+.square {
+	border-radius: 10px;
+	border: 2px solid white;
+	padding: 20px;
+	width: 150px;
+	min-width: 150px;
+	height: 200px;
+	margin: 0px 2% 0px 2%;
+}
+
+.search-box{
+	bottom: 7.5%;
+	justify-content: center;
+	align-content: center;
+	position: fixed;
+	border-radius: 20px;
+	font-size: 20px;
+}
+
+.search-text{
+	font-size: 22px;
+	color: white;
+	background-color: #121212;
+	border: 2px solid white;
+	border-radius: 7px;
+	margin: 10px;
+	max-width: 1000px;
+	min-width: 150px;
+	width: 80%;
 }
 
 .spaced{
