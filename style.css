@@ -13,6 +13,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
+	overflow-y: auto;
 }
 
 .main-content{
@@ -42,10 +43,6 @@ body{
 	margin-left: 20px;
 }
 
-::placeholder{
-	color: white;
-}
-
 .wrap{
 	display: flex;
 	margin-left: -20px;
@@ -59,27 +56,6 @@ body{
 	min-width: 150px;
 	height: 200px;
 	margin: 0px 2% 0px 2%;
-}
-
-.search-box{
-	bottom: 7.5%;
-	justify-content: center;
-	align-content: center;
-	position: fixed;
-	border-radius: 20px;
-	font-size: 20px;
-}
-
-.search-text{
-	font-size: 22px;
-	color: white;
-	background-color: #121212;
-	border: 2px solid white;
-	border-radius: 7px;
-	margin: 10px;
-	max-width: 1000px;
-	min-width: 150px;
-	width: 80%;
 }
 
 .spaced{
@@ -132,22 +108,4 @@ body{
 	position: relative;
 	left: 1rem;
 	top: 0.75rem;
-}
-
-.top-nav{
-	background: #121212;
-	position: fixed;
-	top: 0;
-	height: 30px;
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	padding: 1rem 0rem;
-	align-items: center;
-}
-
-.logo{
-	position: fixed;
-	margin-top: auto;
-	padding-top: 0.2em;
 }
