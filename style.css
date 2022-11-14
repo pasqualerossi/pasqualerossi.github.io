@@ -5,6 +5,7 @@ body{
 	padding: 0;
 	margin: 0;
 	background-color: #121212;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .wrapper{
@@ -13,7 +14,6 @@ body{
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
-	overflow-y: auto;
 }
 
 .main-content{
