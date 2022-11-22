@@ -66,12 +66,17 @@
   	<link rel="stylesheet" href="style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 	<xml src="games.xml"></xml>
+	<script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="gamefeed.json"></script>
+  <script id="game-link" src="https://cdn.htmlgames.com/embed.js?game=ScaryBubbles"></script>
 </head>
 
 <body>
 	<div class="wrapper">
-		<div class="game">
-			<script src="https://cdn.htmlgames.com/embed.js?game=ScaryBubbles"></script>
+		<div id="game-container">
 			<style>
 			iframe
 			{
@@ -82,11 +87,38 @@
 	</div>
 	<div class="button-container">
 			<div class="last-game">
-				<button class="fa-solid fa-angle-up"> Last Game</button> <!-- Click on up button and last game returns back -->
+				<button id="last-game-btn" class="fa-solid fa-angle-up" onclick="doOpposite()"> Last Game</button> <!-- Click on up button and last game returns back -->
 			</div>
 			<div class="next-game"></div>
-				<button class="fa-solid fa-angle-down"> Next Game</button> <!-- Click on down button and another game is shown -->
+				<button id="next-game-btn" class="fa-solid fa-angle-down" onclick="doSomething()"> Next Game</button> <!-- Click on down button and another game is shown -->
 			</div>
 	</div>
+<script>
+	let x = 0;
+	let link = ["https://cdn.htmlgames.com/Klaverjassen/index.html", 
+				"https://cdn.htmlgames.com/BubbleBall/index.html",
+				"https://cdn.htmlgames.com/CountryLabyrinth2/index.html",
+				"https://cdn.htmlgames.com/BBQRoast/index.html"];
+	let linkLength = link.length;
+
+	function doSomething(){
+		$("iframe").attr("src", link[x]);
+		if (x < (linkLength - 1)){
+			x++;
+		}
+		else {
+			x = 0;
+		}
+		console.log("clicked");
+	}
+
+	function doOpposite(){
+		$("iframe").attr("src", link[x]);
+		if (x > 0){
+			x--;
+		}
+		console.log("clicked");
+	}
+</script>
 </body>
 </html>
