@@ -1,4 +1,6 @@
 {
 	"display": "standalone",
-	"short_name": "Game+"
+	"short_name": "Game+",
+	"theme_color": "#121212",
+	"background_color": "#121212"
 }

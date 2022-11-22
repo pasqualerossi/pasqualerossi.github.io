@@ -1,6 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link
+  href="logo.png"
+  media="(device-width: 414px) and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2)"
+  rel="apple-touch-startup-image"
+/>
+<link
+  href="logo.png"
+  media="(device-width: 375px) and (device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3)"
+  rel="apple-touch-startup-image"
+/>
+<link
+  href="logo.png"
+  media="(device-width: 414px) and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 3)"
+  rel="apple-touch-startup-image"
+/>
+...
+<link
+  href="logo.png"
+  media="(device-width: 414px) and (device-height: 896px) 
+    and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
+  rel="apple-touch-startup-image"
+/>
+<link
+  href="logo.png"
+  media="(device-width: 375px) and (device-height: 812px) 
+    and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)"
+  rel="apple-touch-startup-image"
+/>
+<link
+  href="logo.png"
+  media="(device-width: 414px) and (device-height: 896px) 
+    and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)"
+  rel="apple-touch-startup-image"
+/>
+
 <head>
 	<meta 
 		name="viewport"
@@ -15,6 +53,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#121212" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-apple-title" content="Game+">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -26,6 +65,7 @@
 	<link rel="manifest" href="site.webmanifest">
   	<link rel="stylesheet" href="style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	<xml src="games.xml"></xml>
 </head>
 
 <body>
@@ -41,16 +81,12 @@
 			</style>
 	</div>
 	<div class="button-container">
-			<nav>
-				<a href="./index.html"><button class="fa-solid fa-house"></button></a>
-			</nav>
-			<nav>
-				<a href="./search.html"><button class="fa-solid fa-magnifying-glass"></button></a>
-			</nav>
-			<button class="fa-solid fa-angle-up"></button> <!-- Click on up button and last game returns back -->
-			<button class="fa-solid fa-angle-down"></button> <!-- Click on down button and another game is shown -->
-			<button class="fa-solid fa-share"></button>
-			<button class="fa-regular fa-bookmark"></button>
+			<div class="last-game">
+				<button class="fa-solid fa-angle-up"> Last Game</button> <!-- Click on up button and last game returns back -->
+			</div>
+			<div class="next-game"></div>
+				<button class="fa-solid fa-angle-down"> Next Game</button> <!-- Click on down button and another game is shown -->
+			</div>
 	</div>
 </body>
 </html>
