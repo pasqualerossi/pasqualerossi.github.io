@@ -2606,6 +2606,8 @@ let thumbNail = ["https://cdn.htmlgames.com/NeonMath/img/icon/icon-120x120.png",
 		let temp = next;
 		while (temp == next)
 			next = Math.floor(Math.random() * (link.length - 1));
+		//$("#game-icon").css(`${thumbNail[next]}`) - Put the icon of the next game
+		$("#details").html(`<h3>${gameName[next]}</h3>`)
 		$("iframe").attr("src", link[next]);
 		console.log("next");
 	}
@@ -2613,6 +2615,8 @@ let thumbNail = ["https://cdn.htmlgames.com/NeonMath/img/icon/icon-120x120.png",
 	function doLoad()
 	{
 		document.getElementById("last-game-btn").style.display = "none";
+		//$("#game-icon").css(`${thumbNail[next]}`) - Put the icon of the game when app first loads
+		$("#details").html(`<h3>${gameName[next]}</h3>`)
 		$("iframe").attr("src", link[next]);
 		console.log("loaded");
 	}
@@ -2620,7 +2624,9 @@ let thumbNail = ["https://cdn.htmlgames.com/NeonMath/img/icon/icon-120x120.png",
 	function doPrevious()
 	{
 		if (previous.length > 0)
-			$("iframe").attr("src", previous.pop());
+		$("iframe").attr("src", previous.pop());
+		//$("#game-icon").css(`${thumbNail[next]}`) - Put the icon of the previous game
+		//$("#details").html(`<h3>${gameName[previous.length]}</h3>`) - fix the name of the previous game
 		if (previous.length == 0)
 			document.getElementById("last-game-btn").style.display = "none";
 		console.log("previous");
@@ -2653,6 +2659,8 @@ let thumbNail = ["https://cdn.htmlgames.com/NeonMath/img/icon/icon-120x120.png",
 			<iframe id="game"></iframe>
 		</div>
 		<div class="button-container">
+				<div id="game-icon"></div> <!-- Shows the icon thumbnail of the current game -->
+				<div id="details"></div> <!-- Shows the name of the current game -->
 				<div class="last-game">
 					<button id="last-game-btn" class="fa-solid fa-angle-up" onclick="doPrevious()"> Last Game</button> <!-- Click on up button and last game returns back -->
 				</div>
@@ -2664,4 +2672,5 @@ let thumbNail = ["https://cdn.htmlgames.com/NeonMath/img/icon/icon-120x120.png",
 		</div>
 	</div>
 </body>
+
 </html>
