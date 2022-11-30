@@ -2606,27 +2606,27 @@ let thumbNail = ["https://cdn.htmlgames.com/NeonMath/img/icon/icon-120x120.png",
 		let temp = next;
 		while (temp == next)
 			next = Math.floor(Math.random() * (link.length - 1));
-		//$("#game-icon").css(`${thumbNail[next]}`) - Put the icon of the next game
-		$("#details").html(`<h3>${gameName[next]}</h3>`)
+		$("#details").html(`${gameName[next]}`)
 		$("iframe").attr("src", link[next]);
+		$("#game-icon").attr("src", thumbNail[next]); // Put the icon of the game when app first loads
 		console.log("next");
 	}
 
 	function doLoad()
 	{
 		document.getElementById("last-game-btn").style.display = "none";
-		//$("#game-icon").css(`${thumbNail[next]}`) - Put the icon of the game when app first loads
-		$("#details").html(`<h3>${gameName[next]}</h3>`)
+		$("#details").html(`${gameName[next]}`)
 		$("iframe").attr("src", link[next]);
+		$("#game-icon").attr("src", thumbNail[next]); // Put the icon of the game when app first loads
 		console.log("loaded");
 	}
 
 	function doPrevious()
 	{
 		if (previous.length > 0)
+		// $("#details").html(`${gameName[next]}`) // Get the actual name of the previous game
 		$("iframe").attr("src", previous.pop());
-		//$("#game-icon").css(`${thumbNail[next]}`) - Put the icon of the previous game
-		//$("#details").html(`<h3>${gameName[previous.length]}</h3>`) - fix the name of the previous game
+		$("#game-icon").attr("src", thumbNail[next]); // Put the icon of the game when app first loads
 		if (previous.length == 0)
 			document.getElementById("last-game-btn").style.display = "none";
 		console.log("previous");
@@ -2654,28 +2654,44 @@ let thumbNail = ["https://cdn.htmlgames.com/NeonMath/img/icon/icon-120x120.png",
 </head>
 
 <body onload="doLoad()">
-	<div class="wrapper">
-		<div id="game-container">
-			<iframe id="game"></iframe>
+		
+	<div class="game-container"> <!-- Remove ads from the iframe and make the iframe fixed position ont the -->
+		<iframe loading="eager" id="game-screen" sandbox="allow-same-origin allow-scripts"></iframe>
+	</div>
+
+	<div class="top-container">
+		
+		<div id="logo">
+			<img src="./logo.png" alt="Game+ Logo">
 		</div>
-		<div class="top-container"><img src="./logo.png" alt="Game+ Logo">
-			<nav>
-				<button id="search-btn" class="fa-solid fa-magnifying-glass"></button>
-			</nav>
+
+		<div id="search">
+			<button id="search-box" class="fa-solid fa-magnifying-glass"></button>
 		</div>
-		<div class="button-container">
+	
+	</div>
+
+	<div class="button-container">
+
+			<div class="game-details">
 				<div id="game-icon"></div> <!-- Shows the icon thumbnail of the current game -->
 				<div id="details"></div> <!-- Shows the name of the current game -->
-				<div class="last-game">
-					<button id="last-game-btn" class="fa-solid fa-angle-up" onclick="doPrevious()"> Last Game</button> <!-- Click on up button and last game returns back -->
-				</div>
-				<div class="next-game"></div>
-					<button id="next-game-btn" class="fa-solid fa-angle-down" onclick="doNext()"> Next Game</button> <!-- Click on down button and another game is shown -->
-				<div class="share-app">
-					<button id="share-app-btn" class="fa-solid fa-share" onclick="shareButton()"> Share App</button> <!-- Share app with friends -->
-				</div>
-		</div>
+			</div>
+
+			<div class="last-game">
+				<button id="last-game-btn" class="fa-solid fa-angle-up" onclick="doPrevious()"> Last Game</button> <!-- Click on up button and last game returns back -->
+			</div>
+		
+			<div class="next-game">
+				<button id="next-game-btn" class="fa-solid fa-angle-down" onclick="doNext()"> Next Game</button>
+			</div>
+		
+			<div class="share-app">
+				<button id="share-app-btn" class="fa-solid fa-share" onclick="shareButton()"> Share App</button> <!-- Share app with friends -->
+			</div>
+		
 	</div>
+
 </body>
 
 </html>
